@@ -2,11 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Profile from './pages/Profile'
+import Restaurants from './pages/Restaurants'
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Switch, Route  } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+          <Route path="/" exact={true} component={App} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/restaurants" component={Restaurants} />
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
