@@ -12,19 +12,18 @@ class ButtonGenerate extends React.Component{
 
     constructor(props) {
         super(props);
-        this.state = {showing: false};  
+        this.state = {showing: false};
     }
 
     showText(){
-        console.log("Generated")
+        alert("Generated " + this.props.title)
     }
-    
+
     render() {
         return (
             <div className="generate buttons">
                 <button className="generate submit" onClick={() => this.showText(this)}>
                     <FontAwesomeIcon icon="dice" />
-                    <Link to="/profile">Ir para a página sobre \o/</Link>
                 </button>
             </div>
         );

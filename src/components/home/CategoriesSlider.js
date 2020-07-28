@@ -6,12 +6,25 @@ class CategoriesSlider extends Component{
 
 
   render() {
-    const elements = ['one', 'two', 'three'];
+    var firstElement = {
+      'title': "Não sabes onde comer?",
+      'description': 'Nós decidimos por ti.'
+    }
+    var secElement = {
+      'title': "Italiano",
+      'description': 'Papiri pupiri.'
+    }
+    var thirdElement = {
+      'title': "Indiano",
+      'description': 'Hallo guys welcome to tutorial.'
+    }
+    var elements = [firstElement, secElement, thirdElement];
+
 
     return (
       <div className="horizontal-slider-container">
         {elements.map((value, index) => {
-            return <CategoryElement/>
+            return <CategoryElement title={value.title} description={value.description} />
           })
         }
       </div>

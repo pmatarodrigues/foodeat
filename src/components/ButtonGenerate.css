@@ -1,7 +1,7 @@
 .generate.buttons{
-    position: fixed;
+    position: absolute;
     display: flex;
-    bottom: 20vh;
+    bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
 }

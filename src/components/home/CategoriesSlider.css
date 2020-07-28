@@ -4,11 +4,23 @@
   white-space: nowrap;
   padding: 30px;
   margin-top: 15vh;
-  padding-right: 10vw;
+  /* -- remove scrollbar -- */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
-
+/* -- remove scrollbar Chrome, Safari and Opera -- */
+.horizontal-slider-container::-webkit-scrollbar{
+  display: none;
+}
 
 .horizontal-slider-container .category-element{
   display: inline-block;
   margin: 10px;
+}
+/* -- margin of first and last container -- */
+.horizontal-slider-container .category-element:first-child{
+  margin-left: 5vw;
+}
+.horizontal-slider-container .category-element:last-child{
+  margin-right: 15vw;
 }
