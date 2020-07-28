@@ -1,7 +1,8 @@
 .top-bar{
-    background-color: white;
+    background-color: #F7F8FA;
     position: fixed;
     width: 100vw;
+    top: 0;
 }
 
 .logo{

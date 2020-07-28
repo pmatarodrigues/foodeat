@@ -1,0 +1,29 @@
+.category-element{
+  height: 40vh;
+  width: 70vw;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 21px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  position: relative;
+}
+
+
+.category-element-data{
+  /* -- general data -- */
+  box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  /* -- fix on bottom of category-element -- */
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  bottom: 0;
+}
+
+.category-element-data > .category-title{
+  font-size: 18px;
+  margin-bottom: 0
+}
+.category-element-data > .category-address{
+  font-size: 10px;
+  margin: 0
+}

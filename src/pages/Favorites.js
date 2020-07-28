@@ -1,18 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "./Home.css";
+import { render } from '@testing-library/react';
 import ButtonGenerate from '../components/ButtonGenerate';
 
-class Profile extends Component {
+class Favorites extends Component {
 
   render() {
     return (
       <div>
         <div id="text-to-show" style={{paddingTop: "40vh"}}>
-          <h2>Profile</h2>
+          <h2>Favorites</h2>
         </div>
-    </div>
+      </div>
+
     );
   }
 }
 
-export default Profile;
+export default Favorites;
