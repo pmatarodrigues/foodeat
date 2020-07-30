@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ButtonGenerate.css';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios';
 // import your fontawesome library
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -45,13 +45,10 @@ class ButtonGenerate extends Component{
 
             // generate random restaurant
             var randomInt = this.getRandomInt(0, restaurantsData.length)
-
-            // set selected restaurant as state
             var selectedRestaurant = restaurantsData[randomInt]
 
+            // set selected restaurant as state
             this.setState({selectedRestaurant: selectedRestaurant})
-            console.log(this.state.restaurantsJSON)
-            console.log(this.state.selectedRestaurant)
         })
         .catch((error) => console.log("Can’t access " + url + " response. " + error))
     }
@@ -62,10 +59,9 @@ class ButtonGenerate extends Component{
             <div className="generate buttons">
                 <button className="generate submit" onClick={ () => { this.getRestaurantsData() } }>
                     <FontAwesomeIcon icon="dice" />
+                    { // show restaurant name if it's not null
+                    this.state.selectedRestaurant && <Link params={{ selectedRestaurant: this.state.selectedRestaurant }} to={`/restaurant/${this.state.selectedRestaurant.tags.name}`}>{this.state.selectedRestaurant.tags.name}'s Page</Link> }
                 </button>
-                {
-                // show restaurant name if it's not null
-                this.state.selectedRestaurant && <h3> {this.state.selectedRestaurant.tags.name}</h3> }
             </div>
         );
     }

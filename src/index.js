@@ -6,6 +6,7 @@ import Profile from './pages/Profile'
 import Last from './pages/Last'
 import Favorites from './pages/Favorites'
 import Home from './pages/Home';
+import Restaurant from './pages/Restaurant';
 import TopBar from './components/TopBar';
 import BottomMenu from './components/BottomMenu';
 import ButtonGenerate from './components/ButtonGenerate';
@@ -22,6 +23,8 @@ ReactDOM.render(
           <Route path="/favorites" component={Favorites} />
           <Route path="/last" component={Last} />
           <Route path="/profile" component={Profile} />
+          <Route path="/restaurant" component={Restaurant} />
+          <Route path="/restaurant/:restaurantName" component={Restaurant} />
       </Switch>
       <BottomMenu/>
     </BrowserRouter>

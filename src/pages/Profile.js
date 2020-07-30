@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./Home.css";
+import "./Profile.css";
 import ButtonGenerate from '../components/ButtonGenerate';
 
 class Profile extends Component {
