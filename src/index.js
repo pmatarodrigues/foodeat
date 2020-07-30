@@ -15,9 +15,9 @@ import { BrowserRouter, Switch, Route  } from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>
     <div className="App">
-    <TopBar/> 
+    <TopBar/>
     <BrowserRouter>
-      <Switch>        
+      <Switch>
           <Route path="/" exact={true} component={App} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/last" component={Last} />

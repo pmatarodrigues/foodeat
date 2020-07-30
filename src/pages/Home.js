@@ -4,7 +4,6 @@ import CategoriesSlider from '../components/home/CategoriesSlider';
 import { render } from '@testing-library/react';
 
 class Home extends Component{
-
   render() {
     return (
       <div>

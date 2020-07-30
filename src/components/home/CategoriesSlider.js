@@ -24,7 +24,7 @@ class CategoriesSlider extends Component{
     return (
       <div className="horizontal-slider-container">
         {elements.map((value, index) => {
-            return <CategoryElement title={value.title} description={value.description} />
+            return <CategoryElement key={index} title={value.title} description={value.description} />
           })
         }
       </div>
