@@ -19,3 +19,39 @@
   color: white;
 }
 
+:root {
+  --primary-dark-color: #e53935;
+  --secondary-dark-color: #e35d5b;
+  --black-color: #212121;
+  --not-in-use-grey: #757575;
+  --super-light-grey: #F5F5F5;
+  --not-that-light-grey: #E0E0E0;
+  --secondary-grey: #BEBEBE;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* -- General Components -- */
+.card{
+  /* -- general data -- */
+  box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.btn{
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+}
+
+.btn-dark{
+  background-color: black;
+  color: white
+}
+.btn-red{
+  background-color: var(--primary-dark-color);
+  color: white
+}

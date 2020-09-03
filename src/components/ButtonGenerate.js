@@ -7,9 +7,13 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../fontawesome';
 
+import '../tailwind.output.css';
+
 // https://wiki.openstreetmap.org/wiki/Overpass_API#Public_Overpass_API_instances
 
 class ButtonGenerate extends Component{
+    _isMounted = false;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -18,6 +22,13 @@ class ButtonGenerate extends Component{
             restaurantsJSON: "",
             selectedRestaurant: ""
         };
+    }
+
+    componentWillUnmount(){
+        this._isMounted = false;
+    }
+    componentDidMount(){
+        this._isMounted = true;
     }
 
     getRandomInt(min, max) {
@@ -31,24 +42,29 @@ class ButtonGenerate extends Component{
         // -- uses overpass-api from openstreetmap
         // -- test on http://overpass-turbo.eu/
         // --
-        let latitude = "41.441120";
-        let longitude = "-8.291606";
-        let radius = "1000";
+        console.log("ISTO")
+        let latitude = "41.4501903"; //"41.441120";
+        let longitude = "-8.3064193"; // "-8.291606";
+        let radius = "4000";
         let type = "restaurant";
         let url = "https://www.overpass-api.de/api/interpreter?data=[out:json];node(around:"+ radius +"," + latitude + "," + longitude + ")[%22amenity%22~%22" + type + "%22];out%20body;%3E;out%20skel;";
 
         axios.get(url)
         .then(res => {
             const restaurantsData = res.data.elements;
-            // get total number of restaurants
-            this.setState({restaurantsJSON: restaurantsData});
+            if(this._isMounted){
+                // get total number of restaurants
+                this.setState({restaurantsJSON: restaurantsData});
+            }
 
             // generate random restaurant
             var randomInt = this.getRandomInt(0, restaurantsData.length)
             var selectedRestaurant = restaurantsData[randomInt]
 
-            // set selected restaurant as state
-            this.setState({selectedRestaurant: selectedRestaurant})
+            if(this._isMounted){
+                // set selected restaurant as state
+                this.setState({selectedRestaurant: selectedRestaurant})
+            }
         })
         .catch((error) => console.log("Can’t access " + url + " response. " + error))
     }
@@ -57,10 +73,10 @@ class ButtonGenerate extends Component{
     render(){
         return (
             <div className="generate buttons">
-                <button className="generate submit" onClick={ () => { this.getRestaurantsData() } }>
+                <button className="generate main centered-icon" onClick={ () => { this.getRestaurantsData() } }>
                     <FontAwesomeIcon icon="dice" />
                     { // show restaurant name if it's not null
-                    this.state.selectedRestaurant && <Link params={{ selectedRestaurant: this.state.selectedRestaurant }} to={`/restaurant/${this.state.selectedRestaurant.tags.name}`}>{this.state.selectedRestaurant.tags.name}'s Page</Link> }
+                    this.state.selectedRestaurant && <Redirect to={{pathname: "/restaurant/", state: { selectedRestaurant: this.state.selectedRestaurant }}} /> }
                 </button>
             </div>
         );

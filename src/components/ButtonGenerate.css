@@ -25,9 +25,12 @@ button.filter{
     position: relative;
 }
 
-button.generate.submit{
+button.main{
     width: 35vw;
     height: 50px;
+}
+
+.centered-icon{
     float: left;
     display: inline-flex;
     justify-content: space-evenly;

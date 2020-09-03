@@ -29,3 +29,9 @@
   filter: invert(0%) sepia(99%) saturate(43%) hue-rotate(96deg) brightness(100%) contrast(100%);
 }
 
+
+.fa-tag path, .fa-tag{
+  color: transparent;
+  stroke: black;
+  stroke-width: 50px;
+}

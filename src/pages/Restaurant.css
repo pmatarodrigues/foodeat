@@ -1,0 +1,72 @@
+.main-text{
+  margin: 0 auto;
+}
+
+.centered-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+
+.details-card{
+  position: relative;
+  background-color: white;
+  height: 25vh;
+  width: 70vw;
+  padding: 20px;
+}
+
+.details-card > .title{
+  margin: 20px;
+  margin-bottom: 0;
+  text-align: left;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.details-card > .address{
+  margin: 20px;
+  margin-top: 0;
+  text-align: left;
+  color: var(--not-in-use-grey);
+}
+
+.details-button-list{
+  position: absolute;
+  bottom: 50px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  /* -- center -- */
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.details-button-list > .btn{
+  font-size: 12px;
+}
+
+.btn-favorites{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.3em;
+  margin-left: 1em;
+}
+
+.btn-links{
+  width: 100%;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.3em;
+  margin-left: 1em;
+}

@@ -9,9 +9,6 @@
 
 
 .category-element-data{
-  /* -- general data -- */
-  box-shadow: 0px 4px 12px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
   /* -- fix on bottom of category-element -- */
   position: absolute;
   height: 50%;

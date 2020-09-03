@@ -10,15 +10,32 @@ class CategoriesSlider extends Component{
       'title': "Não sabes onde comer?",
       'description': 'Nós decidimos por ti.'
     }
-    var secElement = {
+    var vegetarian = {
+      'title': "Vegetariano",
+      'description': 'Papiri pupiri.',
+      'slug': ["vegetarian", "vegan"]
+    }
+    var fish = {
+      'title': "Peixe / Marisco",
+      'description': 'Papiri pupiri.',
+      'slug': ["burger", "chicken", ]
+    }
+    var snack = {
+      'title': "Snack",
+      'description': 'Hallo guys welcome to tutorial.',
+      'slug': ["burger", "chicken", ]
+    }
+    var chinese = {
+      'title': "Chinês",
+      'description': 'Papiri pupiri.',
+      'slug': ["burger", "chicken", ]
+    }
+    var italian = {
       'title': "Italiano",
-      'description': 'Papiri pupiri.'
+      'description': 'Papiri pupiri.',
+      'slug': ["burger", "chicken", ]
     }
-    var thirdElement = {
-      'title': "Indiano",
-      'description': 'Hallo guys welcome to tutorial.'
-    }
-    var elements = [firstElement, secElement, thirdElement];
+    var elements = [firstElement, vegetarian, snack, chinese, italian];
 
 
     return (
